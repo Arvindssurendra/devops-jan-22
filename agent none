@@ -1,15 +1,15 @@
 pipeline {
-            agent none
+            agent { 'master' }
 		               stages {
 						         stage ('build') {
-											agent { label 'node1'}
+									
 																	steps {
 																	      sh 'sleep 5'; echo "this is build stage running in slave1"
 																		  
 																	}
 												}
 		              stage ('deploy') {
-											agent{ label 'master'}
+											
 																	steps {
 																	      sh 'sleep 5'; echo "this is deploy stage running in master"
 																		  
@@ -17,8 +17,7 @@ pipeline {
 												}										
 			
 			 stage ('test') {
-											agent{ label 'node1'}
-																	steps {
+																												steps {
 																	      sh 'sleep 5'; echo "this is test stage running in node1"
 																		  
 																	}
