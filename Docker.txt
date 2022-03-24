@@ -54,6 +54,9 @@ Docker containers
 	To delete all stopped container
 		docker rm $(docker ps -aq --filter status=exited)
 		
+	To start all the stoped container 
+		docker restart $(docker ps -aq)
+		
 	To check the logs of conatainers 
 		docker logs <container_id>
 		
@@ -74,6 +77,9 @@ Custom Docker Image / Dockerfile
 		- FROM is used to specify the base image on top of this image all the next instructions will be executed.
 		
 		FROM <image_name>:<tag>
+		
+	RUN    
+	       -Run command is used install the applications and packages to your system.
 	
 	COPY and ADD 
 		- Both copy and add instruction is used to copy files and directories from host machine to the image.
